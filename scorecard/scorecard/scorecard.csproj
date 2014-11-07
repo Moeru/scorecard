@@ -70,6 +70,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Contributor.cs" />
+    <Compile Include="Model\Judge.cs" />
+    <Compile Include="Model\SessionModel.cs" />
+    <Compile Include="Model\Submission.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
