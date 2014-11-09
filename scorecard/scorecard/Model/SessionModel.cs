@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,15 @@ namespace scorecard.Model
     {
         public SessionModel()
         {
-            Categories = new List<Category>();
-            Judges = new List<Judge>();
-            Contributors = new List<Contributor>();
-            Submissions = new List<Submission>();
+            Categories = new ObservableCollection<Category>();
+            Judges = new ObservableCollection<Judge>();
+            Contributors = new ObservableCollection<Contributor>();
+            Submissions = new ObservableCollection<Submission>();
         }
 
-        public List<Category> Categories { get; private set; }
-        public List<Judge> Judges { get; private set; }
-        public List<Contributor> Contributors { get; private set; }
-        public List<Submission> Submissions { get; private set; }
+        public ObservableCollection<Category> Categories { get; private set; }
+        public ObservableCollection<Judge> Judges { get; private set; }
+        public ObservableCollection<Contributor> Contributors { get; private set; }
+        public ObservableCollection<Submission> Submissions { get; private set; }
     }
 }

@@ -1,14 +1,68 @@
 ﻿<Window x:Class="scorecard.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Loaded="WindowLoaded"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Menu VerticalAlignment="Top">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File" >
                 <MenuItem Header="_New" Click="NewFile" />
+                <MenuItem Header="_Open" Click="OpenFile" />
                 <MenuItem Header="_Save" Click="SaveFile" />
                 <MenuItem Header="E_xit" Click="Exit" />
             </MenuItem>
         </Menu>
-    </Grid>
+        <TabControl>
+            <TabItem Header="Categories">
+                <DockPanel>
+                    <DockPanel.Resources>
+                        <DataTemplate x:Key="RubricTemplate" >
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding }"></TextBlock>
+                                    <TextBox Name="First"></TextBox>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>2</TextBlock>
+                                    <TextBox Name="Second"></TextBox>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>3</TextBlock>
+                                    <TextBox Name="Third"></TextBox>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>4</TextBlock>
+                                    <TextBox Name="Fourth"></TextBox>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock>5</TextBlock>
+                                    <TextBox Name="Fifth"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+
+                        <DataTemplate x:Key="CategoriesTemplate">
+                            <StackPanel>
+                                <TextBox Text="{Binding Path=Name}" />
+                                <ListBox
+                                    ItemTemplate="{DynamicResource RubricTemplate}"
+                                    ItemsSource="{Binding Path=Rubric.Criteria}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DockPanel.Resources>
+                    <Button DockPanel.Dock="Bottom" Click="AddCategory" Content="Add"/>
+                    <ListBox
+                        x:Name="CategoriesListBox"
+                        ItemTemplate="{DynamicResource CategoriesTemplate}"
+                        HorizontalContentAlignment="Stretch" />
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Contributors">
+            </TabItem>
+            <TabItem Header="Submissions">
+            </TabItem>
+            <TabItem Header="Judges">
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
