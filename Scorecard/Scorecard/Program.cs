@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Scorecard.Controller;
+using Scorecard.View;
+using System;
 using System.Windows.Forms;
 
 namespace Scorecard
@@ -16,7 +15,11 @@ namespace Scorecard
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+
+            var controller = new ApplicationController();
+            var window = new MainWindow(controller);
+
+            Application.Run(window);
         }
     }
 }

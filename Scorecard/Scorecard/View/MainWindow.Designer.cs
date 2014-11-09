@@ -1,4 +1,4 @@
-﻿namespace Scorecard
+﻿namespace Scorecard.View
 {
     partial class MainWindow
     {
@@ -64,18 +64,21 @@
             this.uxOpenMenuItem.Name = "uxOpenMenuItem";
             this.uxOpenMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uxOpenMenuItem.Text = "Open";
+            this.uxOpenMenuItem.Click += new System.EventHandler(this.uxOpenMenuItem_Click);
             // 
             // uxSaveMenuItem
             // 
             this.uxSaveMenuItem.Name = "uxSaveMenuItem";
             this.uxSaveMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uxSaveMenuItem.Text = "Save";
+            this.uxSaveMenuItem.Click += new System.EventHandler(this.uxSaveMenuItem_Click);
             // 
             // uxExitMenuItem
             // 
             this.uxExitMenuItem.Name = "uxExitMenuItem";
             this.uxExitMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uxExitMenuItem.Text = "Exit";
+            this.uxExitMenuItem.Click += new System.EventHandler(this.uxExitMenuItem_Click);
             // 
             // uxTabControl
             // 
